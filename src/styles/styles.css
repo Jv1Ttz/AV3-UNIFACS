@@ -6,7 +6,7 @@
 @import url('footer.css');
 
 :root {
-    --color-primary-1: #000000;
+    --color-primary-1: #0a0a0a;
     --color-primary-2: #35356e;
     --color-primary-3: #4152b4;
     --color-primary-4: #26337e;
@@ -67,6 +67,25 @@ section {
 .section-title {
     color: var(--color-primary-6);
     font-size: 2.563rem;
+}
+#toolbox {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+}
+
+#toolbox a {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    text-decoration: none;
+}
+
+#toolbox a:hover {
+    color: #007bff;
 }
 
 

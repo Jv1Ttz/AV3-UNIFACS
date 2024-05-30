@@ -58,3 +58,37 @@ $(document).ready(function() {
         distance: '20%'
     })
 });
+
+$(document).ready(function() {
+    $('#btnFerramentas').click(function() {
+        // Define o posicionamento da caixa de ferramentas
+        var btnPosition = $('#btnFerramentas').offset();
+        var topPosition = btnPosition.top + $('#btnFerramentas').outerHeight();
+        var leftPosition = btnPosition.left + $('#btnFerramentas').outerWidth();
+        
+        // Cria a caixa de ferramentas
+        var toolbox = $('<div id="toolbox"></div>').css({
+            'top': topPosition,
+            'left': leftPosition
+        });
+        
+        // Adiciona links para as seções de ferramentas na caixa de ferramentas
+        toolbox.append('<a href="#menu">Ferramentas de Gerenciamento de Projetos</a>');
+        toolbox.append('<a href="#menu2">Ferramentas de Testes de Software</a>');
+        toolbox.append('<a href="#menu3">Outras Ferramentas</a>');
+        
+        // Adiciona a caixa de ferramentas à página
+        $('body').append(toolbox);
+        
+        // Fecha a caixa de ferramentas quando clicar fora dela
+        $(document).click(function(event) {
+            if (!$(event.target).closest('#toolbox, #btnFerramentas').length) {
+                $('#toolbox').remove();
+            }
+        });
+        
+        // Impede que o clique no botão de ferramentas propague para o documento
+        return false;
+    });
+
+});
